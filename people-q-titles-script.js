@@ -6,8 +6,7 @@
     { pattern: /\bGirl\b/g, replacement: 'Woman' }, // Replace "Girl" with "Woman" (no space issues)
     { pattern: /\bGirl\s/g, replacement: 'Woman ' }, // Replace "Girl " at the beginning or middle with "Woman "
     { pattern: /\sGirl\b/g, replacement: ' Woman' }, // Replace " Girl" at the end with " Woman"
-    { pattern: /\bAfrican\s|\sAfrican\b/gi, replacement: '' }, // Remove "African " (with trailing space or preceding space)
-    { pattern: /\bAfrican American\s|\sAfrican American\b/gi, replacement: '' }, // Remove "African American " (with trailing space or preceding space)
+    { pattern: /\b(African American|African)\s|\s(African American|African)\b/gi, replacement: '' },
     { pattern: /\bBlack\s|\sBlack\b/gi, replacement: '' }, // Remove "Black " (with trailing space or preceding space)
     { pattern: /\bCaucasian\s|\sCaucasian\b/gi, replacement: '' }, // Remove "Caucasian " (with trailing space or preceding space)
     { pattern: /boy/gi, replacement: 'Kid' } // Replace "boy" with "Kid"
