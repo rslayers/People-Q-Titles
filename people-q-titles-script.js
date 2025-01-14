@@ -9,6 +9,12 @@
     { pattern: /\b(African American|African)\s|\s(African American|African)\b/gi, replacement: '' },
     { pattern: /\bBlack\s|\sBlack\b/gi, replacement: '' }, // Remove "Black " (with trailing space or preceding space)
     { pattern: /\bCaucasian\s|\sCaucasian\b/gi, replacement: '' }, // Remove "Caucasian " (with trailing space or preceding space)
+    { pattern: /\bMiddle-Eastern\s|\sMiddle-Eastern\b/gi, replacement: '' }, // Remove "Middle-Eastern " (with trailing space or preceding space)
+    { pattern: /\bMiddle Eastern\s|\sMiddle Eastern\b/gi, replacement: '' }, // Remove "Middle Eastern " (with trailing space or preceding space)
+    { pattern: /\bIndian\s|\sIndian\b/gi, replacement: '' }, // Remove "Indian " (with trailing space or preceding space)
+    { pattern: /\bMulti-Ethnic\s|\sMulti-Ethnic\b/gi, replacement: '' }, // Remove "Multi-Ethnic " (with trailing space or preceding space)
+    { pattern: /\bMultiethnic\s|\sMultiethnic\b/gi, replacement: '' }, // Remove "Multiethnic " (with trailing space or preceding space)
+    { pattern: /\bBiracial\s|\sBiracial\b/gi, replacement: '' }, // Remove "Biracial " (with trailing space or preceding space)
     { pattern: /boy/gi, replacement: 'Kid' } // Replace "boy" with "Kid"
   ];
 
