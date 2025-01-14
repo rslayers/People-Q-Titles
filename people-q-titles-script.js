@@ -3,19 +3,7 @@
   const replacementPatterns = [
     { pattern: /\bAsian\s|\sAsian\b/gi, replacement: '' }, // Remove "Asian " (with trailing space or preceding space)
     { pattern: /\bBeautiful\s|\sBeautiful\b/gi, replacement: '' }, // Remove "Beautiful " (with trailing space or preceding space)
-    { 
-      pattern: /\bGirl\b/g, 
-      replacement: (match, offset, string) => string.includes('Woman') ? '' : 'Woman' 
-    }, // Replace "Girl" with "Woman" only if "Woman" doesn't exist already
-    { 
-      pattern: /\bGirl\s/g, 
-      replacement: (match, offset, string) => string.includes('Woman') ? '' : 'Woman ' 
-    }, // Replace "Girl " with "Woman " only if "Woman" doesn't exist already
-    { 
-      pattern: /\sGirl\b/g, 
-      replacement: (match, offset, string) => string.includes('Woman') ? '' : ' Woman' 
-    }, // Replace " Girl" with " Woman" only if "Woman" doesn't exist already
-    { pattern: /\b(African American|African)\s|\s(African American|African)\b/gi, replacement: '' },
+    { pattern: /\b(African American|African)\s|\s(African American|African)\b/gi, replacement: '' }, // Remove "African American" or "African"
     { pattern: /\bBlack\s|\sBlack\b/gi, replacement: '' }, // Remove "Black " (with trailing space or preceding space)
     { pattern: /\bCaucasian\s|\sCaucasian\b/gi, replacement: '' }, // Remove "Caucasian " (with trailing space or preceding space)
     { pattern: /\bMiddle-Eastern\s|\sMiddle-Eastern\b/gi, replacement: '' }, // Remove "Middle-Eastern " (with trailing space or preceding space)
@@ -24,7 +12,35 @@
     { pattern: /\bMulti-Ethnic\s|\sMulti-Ethnic\b/gi, replacement: '' }, // Remove "Multi-Ethnic " (with trailing space or preceding space)
     { pattern: /\bMultiethnic\s|\sMultiethnic\b/gi, replacement: '' }, // Remove "Multiethnic " (with trailing space or preceding space)
     { pattern: /\bBiracial\s|\sBiracial\b/gi, replacement: '' }, // Remove "Biracial " (with trailing space or preceding space)
-    { pattern: /boy/gi, replacement: 'Kid' } // Replace "boy" with "Kid"
+    { pattern: /boy/gi, replacement: 'Kid' }, // Replace "boy" with "Kid"
+    
+    // Updated rules for "Girl" to "Woman" replacement only if "Woman" doesn't exist already
+    {
+      pattern: /(^|\s)Girl($|\s)/g,
+      replacement: (match, p1, p2, offset, string) => {
+        if (string.includes('Woman')) {
+          // If "Woman" exists in the string, remove "Girl" and adjust spaces accordingly
+          if (p1 === ' ' && p2 === ' ') {
+            return ' '; // Remove both spaces if "Girl" is in the middle
+          } else if (p1 === ' ' && p2 === '') {
+            return ''; // Remove space after "Girl" if "Girl" is at the start
+          } else if (p1 === '' && p2 === ' ') {
+            return ''; // Remove space before "Girl" if "Girl" is at the end
+          }
+          return ''; // Just remove "Girl" without replacing
+        } else {
+          // If "Woman" doesn't exist in the string, replace "Girl" with "Woman" and handle spaces
+          if (p1 === ' ' && p2 === ' ') {
+            return ' Woman '; // Middle of the title, replace with "Woman" and keep spaces intact
+          } else if (p1 === ' ' && p2 === '') {
+            return ' Woman'; // Start of the title, replace "Girl" with "Woman" without extra space after it
+          } else if (p1 === '' && p2 === ' ') {
+            return 'Woman '; // End of the title, replace "Girl" with "Woman" without extra space before it
+          }
+          return `${p1}Woman${p2}`; // Default case: replace with "Woman" and maintain original spaces
+        }
+      }
+    }
   ];
 
   // Function to simulate hover
