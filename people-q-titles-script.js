@@ -3,9 +3,18 @@
   const replacementPatterns = [
     { pattern: /\bAsian\s|\sAsian\b/gi, replacement: '' }, // Remove "Asian " (with trailing space or preceding space)
     { pattern: /\bBeautiful\s|\sBeautiful\b/gi, replacement: '' }, // Remove "Beautiful " (with trailing space or preceding space)
-    { pattern: /\bGirl\b/g, replacement: 'Woman' }, // Replace "Girl" with "Woman" (no space issues)
-    { pattern: /\bGirl\s/g, replacement: 'Woman ' }, // Replace "Girl " at the beginning or middle with "Woman "
-    { pattern: /\sGirl\b/g, replacement: ' Woman' }, // Replace " Girl" at the end with " Woman"
+    { 
+      pattern: /\bGirl\b/g, 
+      replacement: (match, offset, string) => string.includes('Woman') ? '' : 'Woman' 
+    }, // Replace "Girl" with "Woman" only if "Woman" doesn't exist already
+    { 
+      pattern: /\bGirl\s/g, 
+      replacement: (match, offset, string) => string.includes('Woman') ? '' : 'Woman ' 
+    }, // Replace "Girl " with "Woman " only if "Woman" doesn't exist already
+    { 
+      pattern: /\sGirl\b/g, 
+      replacement: (match, offset, string) => string.includes('Woman') ? '' : ' Woman' 
+    }, // Replace " Girl" with " Woman" only if "Woman" doesn't exist already
     { pattern: /\b(African American|African)\s|\s(African American|African)\b/gi, replacement: '' },
     { pattern: /\bBlack\s|\sBlack\b/gi, replacement: '' }, // Remove "Black " (with trailing space or preceding space)
     { pattern: /\bCaucasian\s|\sCaucasian\b/gi, replacement: '' }, // Remove "Caucasian " (with trailing space or preceding space)
