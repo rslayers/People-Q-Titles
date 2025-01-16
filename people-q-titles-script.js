@@ -43,6 +43,14 @@
           return `${p1}Woman${p2}`; // Default case: replace with "Woman" and maintain original spaces
         }
       }
+    },
+    
+    // New rule: Check for "Albino" and add "With Albinism" after the next word, also remove "Albino"
+    {
+      pattern: /\bAlbino\s(\S+)/g,  // Match "Albino" followed by any non-whitespace character (word)
+      replacement: (match, p1) => {
+        return `Woman With Albinism`; // Replace with "Woman With Albinism"
+      }
     }
   ];
 
