@@ -2,6 +2,8 @@
   // Text patterns to remove and replace
   const replacementPatterns = [
     { pattern: /\bAsian\s|\sAsian\b/gi, replacement: '' }, // Remove "Asian " (with trailing space or preceding space)
+    { pattern: /\bJewish\s|\sJewish\b/gi, replacement: '' }, // Remove "Jewish " (with trailing space or preceding space)
+    { pattern: /\bJew\s|\sJew\b/gi, replacement: '' }, // Remove "Jew " (with trailing space or preceding space)
     { pattern: /\bMuslim\s|\sMuslim\b/gi, replacement: '' }, // Remove "Muslim " (with trailing space or preceding space)
     { pattern: /\bSexy\s|\sSexy\b/gi, replacement: '' }, // Remove "Sexy " (with trailing space or preceding space)
     { pattern: /\bAttractive\s|\sAttractive\b/gi, replacement: '' }, // Remove "Attractive " (with trailing space or preceding space)
