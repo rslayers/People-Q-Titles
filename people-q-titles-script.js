@@ -19,6 +19,7 @@
     { pattern: /\bIndian\s|\sIndian\b/gi, replacement: '' }, // Remove "Indian " (with trailing space or preceding space)
     { pattern: /\bMulti-Ethnic\s|\sMulti-Ethnic\b/gi, replacement: '' }, // Remove "Multi-Ethnic " (with trailing space or preceding space)
     { pattern: /\bMultiethnic\s|\sMultiethnic\b/gi, replacement: '' }, // Remove "Multiethnic " (with trailing space or preceding space)
+    { pattern: /\bMultiracial\s|\sMultiracial\b/gi, replacement: '' }, // Remove "Multiracial " (with trailing space or preceding space)
     { pattern: /\bMixed Race\s|\sMixed Race\b/gi, replacement: '' }, // Remove "Mixed Race " (with trailing space or preceding space)
     { pattern: /\bBiracial\s|\sBiracial\b/gi, replacement: '' }, // Remove "Biracial " (with trailing space or preceding space)
     { pattern: /\bArab\s|\sArab\b/gi, replacement: '' }, // Remove "Arab " (with trailing space or preceding space)
