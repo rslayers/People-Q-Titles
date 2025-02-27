@@ -24,6 +24,9 @@
     { pattern: /\bBiracial\s|\sBiracial\b/gi, replacement: '' }, // Remove "Biracial " (with trailing space or preceding space)
     { pattern: /\bArab\s|\sArab\b/gi, replacement: '' }, // Remove "Arab " (with trailing space or preceding space)
     { pattern: /\bArabic\s|\sArabic\b/gi, replacement: '' }, // Remove "Arabic " (with trailing space or preceding space)
+    { pattern: /\bLatin\s|\sLatin\b/gi, replacement: '' },
+    { pattern: /\bLatino\s|\sLatino\b/gi, replacement: '' },
+    { pattern: /\bLatina\s|\sLatina\b/gi, replacement: '' },
     { pattern: /boy/gi, replacement: 'Kid' }, // Replace "boy" with "Kid"
     
     // Updated rules for "Girl" to "Woman" replacement only if "Woman" doesn't exist already
