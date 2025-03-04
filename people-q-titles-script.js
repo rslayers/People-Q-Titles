@@ -27,6 +27,7 @@
     { pattern: /\bLatin\s|\sLatin\b/gi, replacement: '' },
     { pattern: /\bLatino\s|\sLatino\b/gi, replacement: '' },
     { pattern: /\bLatina\s|\sLatina\b/gi, replacement: '' },
+    { pattern: /\bAfro\s|\sAfro\b/gi, replacement: '' },
     { pattern: /boy/gi, replacement: 'Kid' }, // Replace "boy" with "Kid"
     
     // Updated rules for "Girl" to "Woman" replacement only if "Woman" doesn't exist already
