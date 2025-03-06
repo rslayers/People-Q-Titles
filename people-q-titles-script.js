@@ -31,6 +31,7 @@
     { pattern: /\bAfro Hairstyle\s|\sAfro Hairstyle\b/gi, replacement: '' },
     { pattern: /\bWith An Hairstyle\s|\sWith An Hairstyle\b/gi, replacement: '' },
     { pattern: /\bWith Hairstyle\s|\sWith Hairstyle\b/gi, replacement: '' },
+    { pattern: /\bGirls\s|\sWomen\b/gi, replacement: '' },
     { pattern: /boy/gi, replacement: 'Kid' }, // Replace "boy" with "Kid"
     
     // Updated rules for "Girl" to "Woman" replacement only if "Woman" doesn't exist already
