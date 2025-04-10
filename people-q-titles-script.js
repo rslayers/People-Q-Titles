@@ -28,6 +28,7 @@
     { pattern: /\bLatino\s|\sLatino\b/gi, replacement: '' },
     { pattern: /\bLatina\s|\sLatina\b/gi, replacement: '' },
     { pattern: /\bAfro\s|\sAfro\b/gi, replacement: '' },
+    { pattern: /\bObese\s|\sObese\b/gi, replacement: '' },
     { pattern: /\bAfro Hairstyle\s|\sAfro Hairstyle\b/gi, replacement: '' },
     { pattern: /\bWith An Hairstyle\s|\sWith An Hairstyle\b/gi, replacement: '' },
     { pattern: /\bWith Hairstyle\s|\sWith Hairstyle\b/gi, replacement: '' },
